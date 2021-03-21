@@ -1,20 +1,21 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
 type Place = {
   id: string
   name: string
   slug: string
+  description: string
   location: {
     latitude: number
     longitude: number
   }
 }
 
-export interface IMapProps {
+export type MapProps = {
   places?: Place[]
 }
 
-const Map = ({ places }: IMapProps) => (
+const Map = ({ places }: MapProps) => (
   <MapContainer
     center={[51.505, -0.09]}
     zoom={3}
