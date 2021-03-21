@@ -18,6 +18,7 @@ export type MapProps = {
 const Map = ({ places }: MapProps) => {
   const router = useRouter()
 
+  if (router.isFallback) return null
   return (
     <MapContainer
       center={[0, 0]}
