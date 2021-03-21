@@ -4,7 +4,6 @@ type Place = {
   id: string
   name: string
   slug: string
-  description: string
   location: {
     latitude: number
     longitude: number
@@ -17,7 +16,7 @@ export type MapProps = {
 
 const Map = ({ places }: MapProps) => (
   <MapContainer
-    center={[51.505, -0.09]}
+    center={[0, 0]}
     zoom={3}
     style={{ height: '100%', width: '100%' }}
   >

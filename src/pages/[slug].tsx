@@ -8,7 +8,7 @@ import PageTemplate, { PageTemplateProps } from 'templates/Pages'
 export default function Page({ heading, body }: PageTemplateProps) {
   const router = useRouter()
 
-  // returns a loading state, while page is being created
+  // returns null while page is being created
   if (router.isFallback) return null
   return <PageTemplate heading={heading} body={body} />
 }
