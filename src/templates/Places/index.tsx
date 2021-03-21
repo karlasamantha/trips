@@ -29,7 +29,7 @@ export default function PlacesTemplate({ place }: PlacesTemplateProps) {
       <NextSeo
         title={`Trips - ${place.name}`}
         description={place.description?.text || 'A place I´ve visited'}
-        canonical="https://trips.samantha-vale.dev"
+        canonical="https://trips.samanthavale.dev"
         openGraph={{
           url: 'https://trips.samantha-vale.dev',
           title: `Trips - ${place.name}`,
