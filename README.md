@@ -12,7 +12,7 @@
 - NextSeo
 - Vercel
 
-### TO DO
+## TO DO
 - [ ] Add custom domain
 - [ ] Add custom pins
 - [ ] Improve map styles and zoom
