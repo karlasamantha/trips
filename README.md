@@ -17,5 +17,4 @@
 - [ ] Add custom pins
 - [ ] Improve map styles and zoom
 - [ ] Change images on existing places
-- [ ] Enable analytics
 - [ ] Custom 404 page
