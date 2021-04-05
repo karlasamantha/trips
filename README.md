@@ -14,7 +14,7 @@
 
 ## TO DO
 - [x] Add custom domain
-- [ ] Add custom pins
+- [x] Add custom pins
 - [x] Improve map styles and zoom
 - [ ] Change images on existing places
 - [ ] Custom 404 page
