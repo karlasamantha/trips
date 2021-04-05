@@ -1,5 +1,6 @@
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, MapConsumer } from 'react-leaflet'
 import { useRouter } from 'next/dist/client/router'
+import * as Styles from './styles'
 
 type Place = {
   id: string
@@ -38,30 +39,50 @@ const Map = ({ places }: MapProps) => {
 
   if (router.isFallback) return null
   return (
-    <MapContainer
-      center={[0, 0]}
-      zoom={3}
-      style={{ height: '100%', width: '100%' }}
-    >
-      <CustomTileLayer />
+    <Styles.MapWrapper>
+      <MapContainer
+        center={[0, 0]}
+        zoom={3}
+        minZoom={3}
+        style={{ height: '100%', width: '100%' }}
+        maxBounds={[
+          [-180, 180],
+          [180, -180]
+        ]}
+      >
+        <MapConsumer>
+          {(map) => {
+            const viewportWidth =
+              window.innerWidth ||
+              document.documentElement.clientWidth ||
+              document.body.clientWidth
 
-      {places?.map(({ id, slug, name, location }) => {
-        const { latitude, longitude } = location
+            if (viewportWidth < 768) {
+              map.setMinZoom(2)
+            }
+            return null
+          }}
+        </MapConsumer>
+        <CustomTileLayer />
 
-        return (
-          <Marker
-            key={`place-${id}`}
-            position={[latitude, longitude]}
-            title={name}
-            eventHandlers={{
-              click: () => {
-                router.push(`/place/${slug}`)
-              }
-            }}
-          />
-        )
-      })}
-    </MapContainer>
+        {places?.map(({ id, slug, name, location }) => {
+          const { latitude, longitude } = location
+
+          return (
+            <Marker
+              key={`place-${id}`}
+              position={[latitude, longitude]}
+              title={name}
+              eventHandlers={{
+                click: () => {
+                  router.push(`/place/${slug}`)
+                }
+              }}
+            />
+          )
+        })}
+      </MapContainer>
+    </Styles.MapWrapper>
   )
 }
 

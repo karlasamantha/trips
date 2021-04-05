@@ -7,7 +7,7 @@ export default {
   },
   twitter: {
     handle: '@karlasamantha',
-    site: '@site',
+    site: 'https://trips.samantha-vale.com',
     cardType: 'summary_large_image'
   }
 }
