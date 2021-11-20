@@ -12,15 +12,15 @@ export default function HomeTemplate({ places }: MapProps) {
       <NextSeo
         title="Trips"
         description="A simple project to show my favorite places in the world!"
-        canonical="https://trips.samanthavale.dev"
+        canonical="https://trips.samantha-ale.com"
         openGraph={{
-          url: 'https://trips.samanthavale.dev',
+          url: 'https://trips.samantha-vale.com',
           title: 'My Trips',
           description:
             'A simple project to show in a map the places that I went and show more informations and photos when clicked.',
           images: [
             {
-              url: 'https://trips.samanthavale.dev/img/cover.png',
+              url: 'https://trips.samantha-vale.com/img/cover.png',
               width: 1280,
               height: 720,
               alt: 'Trips'
