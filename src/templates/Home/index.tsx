@@ -17,7 +17,7 @@ export default function HomeTemplate({ places }: MapProps) {
           url: 'https://trips.samantha-vale.com',
           title: 'My Trips',
           description:
-            'A simple project to show in a map the places that I went and show more informations and photos when clicked.',
+            'A simple project to show in a map the places that I went and show more information and photos when clicked.',
           images: [
             {
               url: 'https://trips.samantha-vale.com/img/cover.png',
